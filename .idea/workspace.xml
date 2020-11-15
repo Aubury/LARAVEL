@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4a87c22-89bd-450b-95ab-151a7f99687c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1kIUXsYlJsQFe2DsY7vu32mHc8m" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop/app/Http/Controllers/AuthAdmin" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\app\Http\Controllers\AuthAdmin" />
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\resources\views" />
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\resources\css" />
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\resources\js" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4a87c22-89bd-450b-95ab-151a7f99687c" name="Default Changelist" comment="" />
+      <created>1605387641863</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605387641863</updated>
+      <workItem from="1605387643979" duration="1412000" />
+      <workItem from="1605432222713" duration="5413000" />
+      <workItem from="1605442848943" duration="7588000" />
+      <workItem from="1605459659144" duration="30000" />
+      <workItem from="1605459774029" duration="6225000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="329" y="26" key="#File_Watchers" timestamp="1605434735396">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="26" key="#File_Watchers/0.0.1676.902@0.0.1676.902" timestamp="1605434735396" />
+    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605449965167">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1676.902@0.0.1676.902" timestamp="1605449965167" />
+    <state x="422" y="179" key="EditFileWatcherDialog" timestamp="1605434013458">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="422" y="179" key="EditFileWatcherDialog/0.0.1676.902@0.0.1676.902" timestamp="1605434013458" />
+    <state x="443" y="224" key="NewPhpClassDialog" timestamp="1605459234640">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="443" y="224" key="NewPhpClassDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1605459234640" />
+    <state x="443" y="224" key="NewPhpClassDialog/0.0.1676.902@0.0.1676.902" timestamp="1605449338313" />
+  </component>
+</project>

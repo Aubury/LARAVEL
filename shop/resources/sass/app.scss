@@ -1,0 +1,165 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+form{
+    h3{
+        font-size: 1.8em;
+        font-style: italic;
+        text-align: center;
+    }
+    .inp{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .inf{
+        min-height: 2em;
+    }
+    .height{
+
+        height: 3em;
+    }
+    i.fa {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        text-align: center;
+        margin-right: -2px;
+        position: relative;
+        z-index: 1;
+        float: right;
+    }
+
+    i.fa + input {
+        padding-left: 26px;
+    }
+    .password-control {
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        color: #333333b8;
+    }
+    input{
+        margin: 10px auto;
+    }
+
+
+}
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #343a40!important;
+    z-index: 2;
+    opacity: 1;
+
+    .navigation{
+        font-size: 1.2em;
+        text-align: center;
+
+        .nav{
+            background-color: #343a40!important;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            list-style: none;
+            padding: .75rem;
+            margin: 0 auto;
+            font-family: inherit;
+            position: relative;
+            z-index: 4;
+        }
+        ul.submenu{
+            position: relative;
+        }
+        ul.submenu li ul.submenu{
+            position: absolute;
+            left: 100%;
+            top: 0;
+
+        }
+        li{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            text-align: center;
+            border-right: 1px solid #80DF95;
+            width: 250px;
+            color: rgba(255,255,255,.5);
+            cursor: pointer;
+            font-style: normal;
+            opacity: 1;
+        }
+        ul.submenu li{
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+
+        li a{
+            display: block;
+            color: rgba(255,255,255,.5);
+            text-decoration: none;
+            padding: .5rem 1rem;
+
+        }
+        a.active{
+            color: white;
+        }
+        a:hover{
+            color: rgba(255,255,255,.5);
+        }
+
+        li.submenu-link > a:after {
+            content: "\f0d7";
+            font-family: "FontAwesome";
+            color: inherit;
+            margin-left: 10px;
+        }
+        li.submenu-link ul.submenu li.submenu-link > a::after{
+            content: "\f0da";
+            font-family: "FontAwesome";
+            color: inherit;
+            margin-left: 10px;
+        }
+        ul.submenu {
+            background-color: #343a40!important;
+            border: 2px solid #003559;
+            padding-left: 0;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 3;
+            transition: .6s ease-in-out;
+        }
+        li.submenu-link > ul.submenu{
+            top: 0;
+        }
+        li.submenu-link ul.submenu li.submenu-link > ul.submenu{
+            top: 0;
+        }
+        li.submenu-link:hover > ul.submenu{
+            visibility: visible;
+            top: calc(100% + .75rem);
+            opacity: 1;
+        }
+        li.submenu-link > ul.submenu li.submenu-link:hover{
+            visibility: visible;
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+
+}
+
