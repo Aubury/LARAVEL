@@ -25,7 +25,8 @@ function  getCurrent(name, item) {
 
         if(mass[i].ccy === name) {
 
-            return mass[i][item];
+            return Math.round(parseFloat(mass[i][item])*100)/100;
+            // return mass[i][item]
         }
 }
 //--------------------------------------------------------------------

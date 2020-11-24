@@ -17,9 +17,12 @@ mix.js('resources/js/app.js', 'public/js')
         'resources/js/exchange.js',
     ], 'public/js/main_page.js')
 
-    // .scripts([
-    //     'resources/js/admin.js',
-    // ], 'public/js/admin.js')
+    .scripts([
+        'resources/js/admin.js',
+    ], 'public/js/admin.js')
+    .scripts([
+        'resources/js/registerAdmin.js',
+    ], 'public/js/registerAdmin.js')
 
     .styles([
         'resources/css/reset.css',

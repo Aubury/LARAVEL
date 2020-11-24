@@ -35,6 +35,74 @@ function check_passwords(){
     repeat_password.value === password.value ? flag = true : flag = false;
     return flag;
 }
+//-------------------------------------------------------------------
+function Delete(ev, url){
+
+    let  data = '',
+        fD = new FormData();
+
+    if(ev.target.hasAttribute('id'))
+    {
+        data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
+    }
+
+    fD.append('id', data);
+
+    fetch(url,{
+        method: "POST",
+        body: fD
+    }).then( response => response.text())
+        .then( text => {
+            // console.log(text);
+            window.location.reload();
+        });
+
+}
+//-----------------------------------------------------------------
+function createTable(arr, _table, table_str){
+
+    const table = _table;
+    //   Удаляю всех детей!!!
+    while(table.hasChildNodes()){
+        table.removeChild(table.firstChild);
+    }
+
+    table.innerHTML = table_str;
+
+}
+//--------------------------------------------------------------------------------------------------
+// function getMassIndexById(ev, arr, form)
+// {
+//     let data = '';
+//     if(ev.target.hasAttribute('id')){
+//
+//         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
+//         arr.forEach( el => {
+//             if(el.id === data){
+//                 fillInputsForm(el, form);
+//             }
+//
+//         });
+//     }
+// }
+//----------------------------------------------------------------------------------------------------
+// function fillInputsForm(arr, form){
+//
+//     const inpArr = form;
+//
+//     for(let i = 0; i < inpArr.length; i++){
+//         for (let key in arr) {
+//             if(inpArr[i].name === key){
+//                 if(inpArr[i].inp.nodeName === "INPUT"){
+//                     inpArr[i].inp.value = arr[key];
+//                 }else{
+//                     inpArr[i].inp.innerHTML = arr[key];
+//                 }
+//             }
+//         }
+//     }
+// }
+//----------------------------------------------------------------------------------------------------
 
 const ex = {
     link :  'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
@@ -63,7 +131,8 @@ function  getCurrent(name, item) {
 
         if(mass[i].ccy === name) {
 
-            return mass[i][item];
+            return Math.round(parseFloat(mass[i][item])*100)/100;
+            // return mass[i][item]
         }
 }
 //--------------------------------------------------------------------

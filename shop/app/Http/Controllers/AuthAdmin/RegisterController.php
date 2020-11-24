@@ -5,10 +5,13 @@ namespace App\Http\Controllers\AuthAdmin;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\Admin\Admin;
+use App\Models\Admin\Register;
 use http\Env\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use JavaScript;
 
 
 
@@ -34,7 +37,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-      protected $redirectTo = RouteServiceProvider::ADMIN;
+      protected $redirectTo = RouteServiceProvider::REG_ADMIN;
 //      protected $guard = 'admin';
 
     public function __construct()
@@ -43,8 +46,9 @@ class RegisterController extends Controller
 //        $this->middleware('guest');
     }
     public function show(){
-
-        return view('admin.register');
+        $prp = new Register();
+        $admins = $prp->getAdmins();
+        return view('admin.register', ['admins'=>$admins]);
 
     }
 
@@ -109,13 +113,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Admin::create([
-            'name' => $data['name'],
-            'patronymic' => $data['patronymic'],
-            'surname' => $data['surname'],
-            'phone' => $data['phone'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+//        $admin = DB::table('admins')->where('id',$data->id);
+//        if($admin){
+//            $newData = new Register();
+//            $newData->updateDataAdmin($data);
+//        }else{
+            return Admin::create([
+                'name' => $data['name'],
+                'patronymic' => $data['patronymic'],
+                'surname' => $data['surname'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+//        }
+
     }
 }

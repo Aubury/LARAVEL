@@ -68,7 +68,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Roboto';
-    font-size: 14px;
+    font-size: 12px;
 }
 header, footer{
     width: 100%;
@@ -153,7 +153,7 @@ td{
     border: 1px solid #c6c6c6;
     min-height: 50px;
     vertical-align: middle !important;
-    text-align: center;
+    text-align: center !important;
 
 }
 tr{
@@ -346,4 +346,8 @@ iframe{
 }
 .hide{
     display: none;
+}
+.border-btm{
+    padding-bottom: 15px;
+    border-bottom: .03em solid rgba(74, 85, 104, 0.78);
 }

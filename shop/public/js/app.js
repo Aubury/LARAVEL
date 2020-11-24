@@ -49728,7 +49728,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import Vue from 'vue';
+// window.Vue = Vue;
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -49747,10 +49749,26 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-var app = new Vue({
-  el: '#app'
-});
+// const app = new Vue({
+//     el: '#app',
+//     // table  : '#tableAdmins',
+//     formAddAdmins : '#formAddAdmins',
+//     editAdmin     : '#editAdmin',
+//     deleteAdmin   : '#deleteAdmin',
+//     data: {
+//         admins : '@json($admins)',
+//         screen: false,
+//     },
+//     methods:{
+//         showForm: function () {
+//             screen: true;
+//         }
+//     },
+//     create: function () {
+//        console.log('Admins:' + this.admins)
+//     },
+//
+// });
 
 /***/ }),
 

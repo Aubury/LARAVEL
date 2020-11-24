@@ -11,7 +11,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,7 +24,7 @@
     <header class="f-col">
         @include('inc.header')
     </header>
-    <main class="py-4">
+    <main class="py-4" id="app">
         @yield('content')
     </main>
     <footer>

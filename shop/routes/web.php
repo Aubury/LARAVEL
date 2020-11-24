@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,27 +22,28 @@ Auth::routes();
 Route::resource('admin', 'AuthAdmin\LoginController');
 Route::resource('admin', 'AuthAdmin\RegisterController');
 
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//==================================== Users =====================================
+//======================== Users ========================
 Route::get('/userProfile', [App\Http\Controllers\User\ProfilerController::class, 'index'])->middleware('auth')->name('profile');
 
 
-//=============================== Admins ===============================================================
+//======================== Admins =======================
 
-//LoginOut Routes For Admins...
+//Login Routes For Admins...
 Route::get('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class, 'showLoginForm']);
 Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class, 'login'])->name('loginAdmin');
 
 Route::group(['middleware' => ['web']], function () {
 
-    //Login Routes For Admins...
-    Route::get('/admin/logout', [App\Http\Controllers\AuthAdmin\LoginController::class, 'logout']);
-
-
 // Registration Routes For Admins...
     Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
     Route::post('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class,'register'])->name('registerAdmin');
+//    Route::get('allAdmins', [App\Http\Controllers\Admin\AdminController::class, 'getAllAdmins'])->name('allAdmins');
+//    Route::get('jsGetAdmins', [App\Http\Controllers\Admin\AdminController::class, 'jsGetAdmin']);
+    Route::post('/editAdmin', [App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('editAdmin');
+    Route::post('/deleteAdmin', [App\Http\Controllers\Admin\AdminController::class, 'delete'])->name('deleteAdmin');
 
 //Show Pages For Admin
     Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');

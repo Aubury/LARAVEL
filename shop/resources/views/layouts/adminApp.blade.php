@@ -17,6 +17,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue"></script>
+
 </head>
 <body>
 <div class="full_container">
@@ -24,14 +27,17 @@
     <header class="f-col">
         @include('inc.adminHeader')
     </header>
-    <main class="py-4">
+    <navigation class="w-100 bg-dark">
+        @yield('navigation')
+    </navigation>
+    <main class="container-fluid py-4" id="app">
         @yield('content')
     </main>
     <footer>
         @include('inc.footer')
     </footer>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     @yield('scripts')
 </div>
 </body>
