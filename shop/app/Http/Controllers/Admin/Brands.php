@@ -7,23 +7,18 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Models\Admin\Caterories;
+use App\Models\Admin\Brands as Brand;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-class Categories extends Controller
+class Brands extends Controller
 {
-    /**
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::CATEGORIES;
-
     public function __construct(){
         $this->middleware('admin');
     }
     public function show(){
-        $categories = DB::table('categories')->get();
-        return view('admin.categories', ['categories'=>$categories]);
+        $brands = DB::table('brands')->get();
+        return view('admin.brands', ['brands'=>$brands]);
     }
     public function register(Request $data){
 
@@ -31,19 +26,19 @@ class Categories extends Controller
             'name' => ['required', 'string', 'min:2', 'max:255', 'unique:categories'],
         ], $this->messages());
 
-        $categories = new Caterories();
-        $categories->name = $data->input('name');
+        $brand = new Brand();
+        $brand->name = $data->input('name');
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($data->all());
         } else {
-            $categories->save();
+            $brand->save();
             return redirect()->back();
         }
 
     }
     public function edit(Request $data){
-        DB::table('categories')
+        DB::table('brands')
             ->where('id', $data->id)
             ->update([
                 'name' => $data['name'],
@@ -53,7 +48,7 @@ class Categories extends Controller
     }
     public function delete(Request $data){
 
-        DB::table('categories')->delete($data->id);
+        DB::table('brands')->delete($data->id);
         return redirect()->back();
     }
     public function messages()

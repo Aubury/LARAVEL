@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categories')}}">Категории</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('brands')}}">Бренды</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -47,7 +50,7 @@
                     <form method="POST" action="{{ route('registerAdmin') }}" class="relative" id="formAddAdmins" name="formAddAdmins">
                         @csrf
                         <div class="col w-100">
-                            
+
                             <p><input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Имя" value="{!! old('name') !!}" required>
                                 @error('name')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror</p>
 

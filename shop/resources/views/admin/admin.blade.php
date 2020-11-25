@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categories')}}">Категории</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('brands')}}">Бренды</a>
+                </li>
             </ul>
         </div>
     </nav>

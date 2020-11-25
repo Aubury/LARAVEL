@@ -42,14 +42,21 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::post('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'register'])->name('registerAdmin');
         Route::post('/admin/edit', [App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('editAdmin');
         Route::post('/admin/delete', [App\Http\Controllers\Admin\AdminController::class, 'delete'])->name('deleteAdmin');
+
         Route::post('/category/register', [App\Http\Controllers\Admin\Categories::class, 'register'])->name('registerCategory');
         Route::post('/category/edit', [App\Http\Controllers\Admin\Categories::class, 'edit'])->name('editCategory');
         Route::post('/category/delete', [App\Http\Controllers\Admin\Categories::class, 'delete'])->name('deleteCategory');
+
+        Route::post('/brands/register', [App\Http\Controllers\Admin\Brands::class, 'register'])->name('registerBrand');
+        Route::post('/brands/edit', [App\Http\Controllers\Admin\Brands::class, 'edit'])->name('editBrand');
+        Route::post('/brands/delete', [App\Http\Controllers\Admin\Brands::class, 'delete'])->name('deleteBrand');
+
 
 //Show Pages For Admin
         Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
         Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
         Route::get('/categories', [App\Http\Controllers\Admin\Categories::class, 'show'])->name('categories');
+        Route::get('/brands', [App\Http\Controllers\Admin\Brands::class, 'show'])->name('brands');
 
     });
 //});
