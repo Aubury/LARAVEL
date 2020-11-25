@@ -1,4 +1,5 @@
 @extends('layouts.adminApp')
+@section('title-page')Управление Администраторами@endsection
 @section('navigation')
     <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +11,10 @@
                     <a class="nav-link" href="{{route('admin')}}">Жалобы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{route('adminRegister')}}">Управление администраторами</a>
+                    <a class="nav-link active" href="{{route('adminRegister')}}">Администраторы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('categories')}}">Категории</a>
                 </li>
             </ul>
         </div>
@@ -43,9 +47,7 @@
                     <form method="POST" action="{{ route('registerAdmin') }}" class="relative" id="formAddAdmins" name="formAddAdmins">
                         @csrf
                         <div class="col w-100">
-                            <p><input type="text" class="form-control @error('id') is-invalid @enderror" name="id" placeholder="Id" value="{!! old('id') !!}" readonly>
-                                @error('id')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror</p>
-
+                            
                             <p><input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Имя" value="{!! old('name') !!}" required>
                                 @error('name')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror</p>
 
@@ -133,8 +135,8 @@
      <table class="tableAdmins w_100" id="tableAdmins">
                 <tr><th>Delete</th><th>Edit</th><th>ФИО</th><th>Email</th><th>Последний визит</th></tr>
                 @foreach($admins as $admin)
-               <tr><td class="iconsDel"><i class="material-icons" onclick="fillInputsForm({{json_encode($admin)}},'formDeleteAdmin' );">delete</i></td>
-                   <td class="iconsEd"><i class="material-icons" onclick="fillInputsForm({{json_encode($admin)}}, 'formEditAdmin');">edit</i></td>
+               <tr><td class="iconsDel"><i class="material-icons" onclick="fillInputsForm({{json_encode($admin)}},'formDeleteAdmin' )">delete</i></td>
+                   <td class="iconsEd"><i class="material-icons" onclick="fillInputsForm({{json_encode($admin)}}, 'formEditAdmin')">edit</i></td>
                     <td>{{$admin['surname']}}<br>{{$admin['name']}}<br>{{$admin['patronymic']}}<br></td>
                     <td>{{$admin['email']}}</td>
                     <td>{{$admin['last_visit']}}<br></td>
@@ -148,12 +150,11 @@
 @section('scripts')
     <script src="https://kit.fontawesome.com/6c7f1b339a.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset('js/main_page.js')}}"></script>
-{{--    <script type="text/javascript" src="{{asset('js/registerAdmin.js')}}"></script>--}}
-        <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
 
     <script>
         let admins = '@json($admins[0])';
-        getAllAdmins(admins);
+        getAllMass(admins);
     </script>
 
 @endsection

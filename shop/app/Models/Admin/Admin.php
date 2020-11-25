@@ -50,8 +50,5 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-//    public function getDateFormat()
-//    {
-//        return 'U';
-//    }
+
 }

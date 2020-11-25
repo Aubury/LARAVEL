@@ -76,21 +76,6 @@ class LoginController extends Controller
         return redirect($this->redirectTo);
     }
 
-//    public function authenticate(Request $request)
-//    {
-//        $credentials = $request->only('login', 'password');
-//
-//        if (Auth::attempt($credentials)) {
-//            // Authentication passed...
-//            return redirect()->intended('dashboard');
-//        }else{
-//            return redirect('/admin-log');
-//        }
-//    }
-
-//    protected function guard(){
-//        return Auth::guard('admin');
-//    }
     /**
      * Handle a login request to the application.
      *
@@ -108,27 +93,15 @@ class LoginController extends Controller
             'email'    => $request->get('email'),
             'password' => $request->get('password')
         ], $request->filled('remember'))) {
-//
+
             $admin = DB::table('admins')->where('email', $request->get('email'))->first();
-//            $upd = HASH::make(time() . $admin->id);
-//
-//            DB::table('log_in')->insert([
-//                'user_id' => $admin->id,
-//                'upd' => $upd,
-//                'ip_address' => $this->getIp(),
-//                'user_agent' => $request->header('User-Agent'),
-//                'last_activity' => NOW()
-//            ]);
-//
+
             $this->update($admin);
-//
-//            $this->startLogin($request, $admin);
             return redirect($this->redirectTo);
-//
+
         }else{
             return $this->sendFailedLoginResponse($request);
         }
-
 
     }
     public function getIp(){

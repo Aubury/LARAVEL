@@ -20,8 +20,8 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/';
     public const PROFILE = '/userProfile';
     public const ADMIN = '/admin';
-    public const LoginAdmin = '/admin/login';
     public const REG_ADMIN = '/admin/register';
+    public const CATEGORIES = '/admin/categories';
 
     /**
      * The controller namespace for the application.

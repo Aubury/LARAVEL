@@ -144,7 +144,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\database\migrations" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.development">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -196,7 +203,10 @@
       <workItem from="1605953582446" duration="7914000" />
       <workItem from="1606049542320" duration="2440000" />
       <workItem from="1606134901952" duration="18102000" />
-      <workItem from="1606199843593" duration="7268000" />
+      <workItem from="1606199843593" duration="14102000" />
+      <workItem from="1606231038087" duration="6988000" />
+      <workItem from="1606238165557" duration="7308000" />
+      <workItem from="1606304723413" duration="12106000" />
     </task>
     <servers />
   </component>
@@ -204,11 +214,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606216795032">
+    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606246256716">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1605805147674" />
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902@0.0.1676.902" timestamp="1606216795032" />
+    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902@0.0.1676.902" timestamp="1606246256716" />
     <state x="422" y="179" key="EditFileWatcherDialog" timestamp="1605869194852">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
@@ -233,5 +243,17 @@
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1606139866644" />
     <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1606161989798" />
+    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1606224594788">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1606224594788" />
+    <state x="230" y="8" key="SettingsEditor" timestamp="1606238154322">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="230" y="8" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1606238154322" />
+    <state x="410" y="202" width="840" height="1034" key="run.anything.popup" timestamp="1606232440757">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902@0.0.1676.902" timestamp="1606232440757" />
   </component>
 </project>

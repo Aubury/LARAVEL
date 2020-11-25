@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title-page')User@endsection
 @section('content')
     <div class="container">
         <div class="f-col justify-center align-center">

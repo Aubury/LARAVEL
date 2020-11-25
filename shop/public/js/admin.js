@@ -1,20 +1,8 @@
-//-------------------------------------------------------------------------------------------------------
-function getAllAdmins(admins)
-{
-    console.log(admins);
+//-------------------------------------------------------
+function getAllMass(item) {
+    console.log(item);
 }
-//----------------------------------------------------------------------------------------------------
-function formsHide() {
-  let mass = document.querySelectorAll('.block-form');
-  mass.forEach((el)=>{
-      el.style.display = 'none';
-    })
-}
-function showForm(id) {
-    formsHide();
-    document.getElementById(id).style.display = 'block';
-}
-//----------------------------------------------------------------------------------------------------
+//---------------------------------------------------------
 function fillInputsForm(arr, id){
 
     let form = document.getElementById(id);
@@ -26,5 +14,21 @@ function fillInputsForm(arr, id){
         }
      }
 }
-formsHide();
+//----------------------------------------------------------
+function hideForms() {
+    let mass = document.querySelectorAll('.block-form');
 
+    mass.forEach( (el)=>{
+        el.style.display ='none';
+    })
+
+}
+//------------------------------------------------------------
+function showForm(id) {
+    hideForms();
+    let form = document.getElementById(id);
+    form.style.display = 'block';
+
+}
+//-------------------------------------------------------------
+hideForms();

@@ -14,7 +14,6 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            Schema::create('admins', function (Blueprint $table) {
                 $table->bigIncrements('id')->unsigned();
                 $table->string('name');
                 $table->string('patronymic');
@@ -27,7 +26,6 @@ class CreateAdminsTable extends Migration
                 $table->rememberToken();
                 $table->timestamps();
             });
-        });
     }
 
     /**

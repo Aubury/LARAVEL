@@ -18,7 +18,7 @@
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/vue"></script>
+{{--    <script src="https://unpkg.com/vue"></script>--}}
 
 </head>
 <body>

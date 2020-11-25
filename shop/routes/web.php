@@ -35,24 +35,24 @@ Route::get('/userProfile', [App\Http\Controllers\User\ProfilerController::class,
 Route::get('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class, 'showLoginForm']);
 Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class, 'login'])->name('loginAdmin');
 
-Route::group(['middleware' => ['web']], function () {
+//Route::prefix('admin')->group(function () {
+    Route::group(['middleware' => ['web']], function () {
 
 // Registration Routes For Admins...
-    Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
-    Route::post('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class,'register'])->name('registerAdmin');
-//    Route::get('allAdmins', [App\Http\Controllers\Admin\AdminController::class, 'getAllAdmins'])->name('allAdmins');
-//    Route::get('jsGetAdmins', [App\Http\Controllers\Admin\AdminController::class, 'jsGetAdmin']);
-    Route::post('/editAdmin', [App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('editAdmin');
-    Route::post('/deleteAdmin', [App\Http\Controllers\Admin\AdminController::class, 'delete'])->name('deleteAdmin');
+        Route::post('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'register'])->name('registerAdmin');
+        Route::post('/admin/edit', [App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('editAdmin');
+        Route::post('/admin/delete', [App\Http\Controllers\Admin\AdminController::class, 'delete'])->name('deleteAdmin');
+        Route::post('/category/register', [App\Http\Controllers\Admin\Categories::class, 'register'])->name('registerCategory');
+        Route::post('/category/edit', [App\Http\Controllers\Admin\Categories::class, 'edit'])->name('editCategory');
+        Route::post('/category/delete', [App\Http\Controllers\Admin\Categories::class, 'delete'])->name('deleteCategory');
 
 //Show Pages For Admin
-    Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
+        Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
+        Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
+        Route::get('/categories', [App\Http\Controllers\Admin\Categories::class, 'show'])->name('categories');
 
-});
-
-//// Registration Routes For Admins...
-//Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
-//Route::post('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class,'register'])->name('registerAdmin');
+    });
+//});
 
 
 
