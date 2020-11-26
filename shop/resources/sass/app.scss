@@ -228,4 +228,11 @@ form{
     li:nth-child(3):before {content:"\f1f8";}
 
 }
+table{
+    img{
+        max-height: 30px;
+        width: auto;
+        float: left;
+    }
+}
 

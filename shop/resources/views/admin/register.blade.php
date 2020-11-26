@@ -19,6 +19,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('brands')}}">Бренды</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('products')}}">Товары</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('images')}}">Товары</a>
+                </li>
             </ul>
         </div>
     </nav>

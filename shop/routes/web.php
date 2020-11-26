@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::resource('admin', 'AuthAdmin\LoginController');
 Route::resource('admin', 'AuthAdmin\RegisterController');
+Route::resource('/images','ImageController');
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -52,11 +53,16 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::post('/brands/delete', [App\Http\Controllers\Admin\Brands::class, 'delete'])->name('deleteBrand');
 
 
+
 //Show Pages For Admin
         Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
         Route::get('/admin/register', [App\Http\Controllers\AuthAdmin\RegisterController::class, 'show'])->name('adminRegister');
         Route::get('/categories', [App\Http\Controllers\Admin\Categories::class, 'show'])->name('categories');
         Route::get('/brands', [App\Http\Controllers\Admin\Brands::class, 'show'])->name('brands');
+        Route::get('/products', [App\Http\Controllers\Admin\Products::class, 'show'])->name('products');
+        Route::get('/addProduct', [App\Http\Controllers\Admin\Products::class, 'pageAddProduct'])->name('addProduct');
+        Route::get('/images', [App\Http\Controllers\ImageController::class, 'index'])->name('images');
+
 
     });
 //});

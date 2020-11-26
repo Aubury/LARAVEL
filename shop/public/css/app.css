@@ -11150,3 +11150,9 @@ form input {
   content: "\F1F8";
 }
 
+table img {
+  max-height: 30px;
+  width: auto;
+  float: left;
+}
+

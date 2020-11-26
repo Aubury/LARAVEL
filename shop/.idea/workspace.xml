@@ -132,6 +132,10 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/laracasts/utilities" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/kirill-dan/uploadimage" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-glide" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kPerrHQcdNqeDsj14tZ5HTgA9p" />
@@ -206,7 +210,8 @@
       <workItem from="1606199843593" duration="14102000" />
       <workItem from="1606231038087" duration="6988000" />
       <workItem from="1606238165557" duration="7308000" />
-      <workItem from="1606304723413" duration="16287000" />
+      <workItem from="1606304723413" duration="22448000" />
+      <workItem from="1606397984718" duration="17103000" />
     </task>
     <servers />
   </component>
@@ -214,6 +219,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606402668378">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1676.902@0.0.1676.902" timestamp="1606402668378" />
     <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606246256716">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
@@ -243,10 +252,10 @@
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1606139866644" />
     <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1606161989798" />
-    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1606320998295">
+    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1606399795187">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1606320998295" />
+    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1606399795187" />
     <state x="230" y="8" key="SettingsEditor" timestamp="1606238154322">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
