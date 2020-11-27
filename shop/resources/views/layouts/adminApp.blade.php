@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
+    @yield('style')
 
     <!-- Scripts -->
 {{--    <script src="https://unpkg.com/vue"></script>--}}

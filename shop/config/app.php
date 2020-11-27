@@ -162,8 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-//        Spatie\Glide\GlideServiceProvider::class,
-//        Dan\UploadImage\UploadImageServiceProvider::class,
+        Spatie\Glide\GlideServiceProvider::class,
+        Dan\UploadImage\UploadImageServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,8 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-//        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
-//        'UploadImage' => Dan\UploadImage\UploadImageFacade::class,
+        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
+        'UploadImage' => Dan\UploadImage\UploadImageFacade::class,
 
     ],
 

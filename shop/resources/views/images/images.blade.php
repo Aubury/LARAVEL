@@ -1,4 +1,10 @@
 @extends('layouts.adminApp')
+@section('style')
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+@endsection
 @section('title-page')Изображения@endsection
 @section('navigation')
     <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,15 +39,55 @@
     <div class="f-row justify-center">
         <h2>Каталог изображения</h2>
     </div>
+    <div class="f-row container">
+        <div class="col-4 col-md-3 offset-md-9 p-2">
+            <input onkeyup="tableSearch()" class="form-control mr-sm-3" id="searchImages" type="search" placeholder="Поиск по таблице" aria-label="Search">
+        </div>
+    </div>
     <div class="f-row justify-around container">
-        <div class="col-9 border-warning">
+        <div class="col-4">
+            <div class="card border-info  mb-3">
+                <div class="card-header"><h5>Добавление изображение</h5></div>
+                <div class="card-body">
+                    <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>File</span>
+                                <input id="img" type="file" name="file[]" multiple>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                            </div>
+                            <button type="submit" class="btn btn-success">Добавить</button>
+                        </div>
+                    </form>
+{{--                        <form action="{{ route('images.destroy', ['images'=>$]) }}" method="POST" enctype="form-data" id="deleteImage">--}}
+{{--                            {{ csrf_field() }}--}}
+{{--                            <div class="form-group">--}}
+{{--                            <input class="form-control" id="id" placeholder="ID" name="id" readonly>--}}
+{{--                            </div>--}}
+{{--                        <button type="submit" class="btn btn-success">Удалить</button>--}}
+{{--                    </form>--}}
+                </div>
+            </div>
+        </div>
+        <div class="col-8 border-warning">
             <table class="tableImages w_100" id="tableImages">
-                <tr><th>Delete</th><th>ID</th><th>Название</th> <th>Картинка</th></tr>
+                <tr><th>Delete</th><th>ID</th><th>Картинка</th><th>Название</th></tr>
                 @foreach($images as $image)
-                    <tr><td class="iconsDel"><i class="material-icons">delete</i></td>
+                    <tr><td class="iconsDel">
+                            <form method="POST" action="{{route('deleteImage')}}">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$image->id}}">
+                                <input type="hidden" name="name" value="{{$image->img}}">
+                                <button type="submit" class="no-border"><i class="material-icons">delete</i></button>
+                            </form>
+                        </td>
                         <td>{{ $image->id }}</td>
-                        <td>{{ $image->title }}</td>
                         <td><img src="{{ asset('upload/'.$image->img) }}"> </td>
+                        <td>{{ $image->title }}</td>
                     </tr>
                 @endforeach
             </table>
@@ -50,9 +96,11 @@
 
 @section('scripts')
     <script src="https://kit.fontawesome.com/6c7f1b339a.js" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script type="text/javascript" src="{{asset('js/main_page.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
-
 @endsection
 
 

@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image as ImageInt;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Filesystem\Filesystem as File;
 
 class ImageController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('admin');
+    }
     public function index()
     {
         $images = Image::all();
@@ -46,7 +52,9 @@ class ImageController extends Controller
                 }
                 $img = ImageInt::make($f);
                 $img->save($path . $fileName);
-                Image::create(['title' => $request->title, 'img' => $fileName]);
+                Image::create(['title' => $fileName, 'img' => $fileName]);
+
+
             }
 
             return redirect()->route('images');
@@ -115,8 +123,10 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $img)
     {
-        //
+        app(File::class)->delete((public_path('upload/'.$img->name)));
+       Image::destroy($img->id); //удаление из базы
+       return redirect()->back();
     }
 }

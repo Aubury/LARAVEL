@@ -52,7 +52,7 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::post('/brands/edit', [App\Http\Controllers\Admin\Brands::class, 'edit'])->name('editBrand');
         Route::post('/brands/delete', [App\Http\Controllers\Admin\Brands::class, 'delete'])->name('deleteBrand');
 
-
+        Route::post('/images/delete' , [App\Http\Controllers\ImageController::class, 'delete'])->name('deleteImage');
 
 //Show Pages For Admin
         Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');

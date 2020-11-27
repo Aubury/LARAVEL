@@ -10913,6 +10913,50 @@ form h3 {
   text-align: center;
 }
 
+form input {
+  margin: 10px auto;
+}
+
+form input:not(type[checkbox]),
+form select,
+form textarea {
+  /*font-family: 'Roboto Light';*/
+  font-size: 1.5em;
+  color: #040505;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 2em;
+  border: 0.1em solid black;
+  outline: none;
+  /* Убираем свечение в Chrome и Safari */
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  /* Убираем рамку в Chrome и Safari */
+  -moz-appearance: none;
+}
+
+form input[type=file] {
+  font-size: 1.3em;
+  color: #040505;
+  height: 2em;
+}
+
+form .form-check-input {
+  margin-top: 0;
+}
+
+form textarea {
+  min-height: 150px;
+}
+
+form input[placeholder],
+form textarea[placeholder] {
+  font-style: italic;
+  padding-left: 10px;
+  color: #949494;
+}
+
 form .inp {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -10949,10 +10993,6 @@ form .password-control {
   width: 20px;
   height: 20px;
   color: #333333b8;
-}
-
-form input {
-  margin: 10px auto;
 }
 
 .nav-bar {
@@ -11148,6 +11188,61 @@ form input {
 
 .widget li:nth-child(3):before {
   content: "\F1F8";
+}
+
+table {
+  margin: 10px;
+  border-collapse: collapse;
+  /*border: 1px black solid;*/
+  border: 1px solid #c6c6c6;
+  background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 0px 10px gray;
+}
+
+table th {
+  background-color: #e2e2e2;
+  border: 1px solid #c6c6c6;
+  min-height: 50px;
+  text-align: center !important;
+  vertical-align: center;
+  font-weight: 600;
+}
+
+table td {
+  border: 1px solid #c6c6c6;
+  min-height: 50px;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+table tr {
+  min-height: 50px;
+}
+
+table td.iconsDel {
+  max-width: 50px;
+  width: 50px !important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+table td.iconsEd {
+  min-width: 70px;
+  width: 70px !important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+table a {
+  color: black;
+}
+
+table tr,
+table td,
+table th {
+  text-align: left;
+  border: 1px black solid;
+  padding: 0.75rem;
 }
 
 table img {
