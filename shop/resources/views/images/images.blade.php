@@ -63,19 +63,12 @@
                             <button type="submit" class="btn btn-success">Добавить</button>
                         </div>
                     </form>
-{{--                        <form action="{{ route('images.destroy', ['images'=>$]) }}" method="POST" enctype="form-data" id="deleteImage">--}}
-{{--                            {{ csrf_field() }}--}}
-{{--                            <div class="form-group">--}}
-{{--                            <input class="form-control" id="id" placeholder="ID" name="id" readonly>--}}
-{{--                            </div>--}}
-{{--                        <button type="submit" class="btn btn-success">Удалить</button>--}}
-{{--                    </form>--}}
                 </div>
             </div>
         </div>
         <div class="col-8 border-warning">
             <table class="tableImages w_100" id="tableImages">
-                <tr><th>Delete</th><th>ID</th><th>Картинка</th><th>Название</th></tr>
+                <tr><th>Delete</th><th>Edit</th><th>ID</th><th>Картинка</th><th>Название</th></tr>
                 @foreach($images as $image)
                     <tr><td class="iconsDel">
                             <form method="POST" action="{{route('deleteImage')}}">
@@ -85,6 +78,11 @@
                                 <button type="submit" class="no-border"><i class="material-icons">delete</i></button>
                             </form>
                         </td>
+                        <td class="iconsEd">
+                            <a href="{{route('image',$image)}}">
+                                <i class="material-icons">edit</i>
+                             </a>
+                         </td>
                         <td>{{ $image->id }}</td>
                         <td><img src="{{ asset('upload/'.$image->img) }}"> </td>
                         <td>{{ $image->title }}</td>

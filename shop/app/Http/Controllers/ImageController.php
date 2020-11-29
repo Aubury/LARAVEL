@@ -86,12 +86,13 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $image
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id)
+    public function show($image)
     {
-        //
+        $img = DB::table('images')->where('id', $image)->first();
+        return view('images.image', ['image'=>$img]);
     }
 
     /**
@@ -121,11 +122,11 @@ class ImageController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function delete(Request $img)
     {
-        app(File::class)->delete((public_path('upload/'.$img->name)));
+       app(File::class)->delete((public_path('upload/'.$img->name)));//удаление из папки
        Image::destroy($img->id); //удаление из базы
        return redirect()->back();
     }

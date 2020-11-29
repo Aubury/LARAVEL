@@ -62,6 +62,7 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::get('/products', [App\Http\Controllers\Admin\Products::class, 'show'])->name('products');
         Route::get('/addProduct', [App\Http\Controllers\Admin\Products::class, 'pageAddProduct'])->name('addProduct');
         Route::get('/images', [App\Http\Controllers\ImageController::class, 'index'])->name('images');
+        Route::get('/images/image/{title}', [App\Http\Controllers\ImageController::class, 'show'])->name('image');
 
 
     });
