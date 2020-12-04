@@ -1,6 +1,6 @@
 
-
-const app = Vue.createApp({
+const app = new Vue({
+    el: "#app",
     data: {
         admins : [],
     },
@@ -11,7 +11,7 @@ const app = Vue.createApp({
         }
 
     },
-}).mount("#app");
+})
 
 
 
