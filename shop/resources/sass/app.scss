@@ -8,6 +8,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Cropper
+@import "~cropper/dist/cropper.css";
+@import "~cropperjs/dist/cropper.css";
+
 header a{
     color: white;
 }
@@ -50,6 +54,10 @@ form{
         font-style: italic;
         padding-left: 10px;
         color: #949494;
+    }
+    label{
+        font-style: italic;
+        font-weight: 500;
     }
     .inp{
         margin-bottom: 0;

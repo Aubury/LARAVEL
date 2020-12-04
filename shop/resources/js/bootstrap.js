@@ -9,6 +9,9 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
+    window.Vue = require('vue');
+    window.Cropper = require('cropperjs');
+    window.VueRouter = require('vue-router');
 
     require('bootstrap');
 } catch (e) {}
@@ -39,3 +42,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+
+
+
+

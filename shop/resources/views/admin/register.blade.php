@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{route('products')}}">Товары</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('images')}}">Товары</a>
+                    <a class="nav-link" href="{{route('images')}}">Картинки</a>
                 </li>
             </ul>
         </div>
@@ -158,12 +158,14 @@
 
 @section('scripts')
     <script src="https://kit.fontawesome.com/6c7f1b339a.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="{{asset('js/main_page.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
-
+    <script type="text/javascript" src="{{asset('js/registerAdmin.js')}}"></script>
     <script>
         let admins = '@json($admins[0])';
         getAllMass(admins);
+        // getAdmins(admins);
     </script>
 
 @endsection

@@ -1,3 +1,21 @@
+
+
+const app = Vue.createApp({
+    data: {
+        admins : [],
+    },
+    methods:{
+        getAdmins : function (arr) {
+            this.admins = arr;
+            console.log('Vue ---> Admins:' + this.admins);
+        }
+
+    },
+}).mount("#app");
+
+
+
+
 //-------------------------------------------------------
 function getAllMass(item) {
     console.log(item);

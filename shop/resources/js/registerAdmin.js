@@ -1,5 +1,4 @@
-const app = new Vue({
-    el: '#app',
+const app = Vue.createApp({
     data: {
         admins : '',
         addAdmin : document.getElementById('addAdmin'),
@@ -29,7 +28,7 @@ const app = new Vue({
         },
     },
 
-});
-app.create();
-app.hideForms();
+}).mount('#app');
+// app.create();
+// app.hideForms();
 
