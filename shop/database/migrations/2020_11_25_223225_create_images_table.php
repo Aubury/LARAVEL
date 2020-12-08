@@ -17,6 +17,10 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('img');
+            $table->integer('width');
+            $table->integer('height');
+            $table->integer('size');
+            $table->ipAddress('ipAddress');
             $table->timestamps();
         });
     }

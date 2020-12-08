@@ -43,8 +43,12 @@
             <div class="card border-info  mb-3">
                 <div class="card-header"><h5>Обрезка изображения</h5></div>
                 <div class="card-body">
-                    <form action="" method="post" id="crop" name="crop">
+                    <form action="{{route('updateImage')}}" method="Post" id="crop" name="crop">
                         @csrf
+                        <p><input type="hidden" name="id" value="{{$image->id}}" class="form-control no_margin_top"></p>
+                        <p><input type="hidden" name="name" value="{{$image->title}}" class="form-control no_margin_top"></p>
+                        <p><input type="hidden" name="x" value="" class="form-control no_margin_top"></p>
+                        <p><input type="hidden" name="y" value="" class="form-control no_margin_top"></p>
                         <p><label for="width">Width</label>
                             <input type="text" name="width" value="" class="form-control no_margin_top">
                         </p>
@@ -73,7 +77,15 @@
 {{--            <script src="https://unpkg.com/vue@next"></script>--}}
 {{--            <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>--}}
             <script type="text/javascript" src="{{asset('js/cropper.js')}}"></script>
+
             <script type="text/javascript" src="{{asset('js/image.js')}}"></script>
+                <script>
+                    let _image = '@json($image)';
+                    {{--let path = '@json($path)';--}}
+                    getImage(_image);
+                    console.log('IMAGE --> ' + _image);
+                    // console.log('PATH --> ' + path);
+                </script>
 @endsection
 
 

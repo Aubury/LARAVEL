@@ -53,6 +53,8 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::post('/brands/delete', [App\Http\Controllers\Admin\Brands::class, 'delete'])->name('deleteBrand');
 
         Route::post('/images/delete' , [App\Http\Controllers\ImageController::class, 'delete'])->name('deleteImage');
+        Route::post('/images/updateImage' , [App\Http\Controllers\ImageController::class, 'updateImage'])->name('updateImage');
+
 
 //Show Pages For Admin
         Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
@@ -63,6 +65,7 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::get('/addProduct', [App\Http\Controllers\Admin\Products::class, 'pageAddProduct'])->name('addProduct');
         Route::get('/images', [App\Http\Controllers\ImageController::class, 'index'])->name('images');
         Route::get('/images/image/{title}', [App\Http\Controllers\ImageController::class, 'show'])->name('image');
+
 
 
     });

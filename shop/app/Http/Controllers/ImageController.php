@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image as ImageInt;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Filesystem\Filesystem as File;
+use function Ramsey\Uuid\v1;
 
 class ImageController extends Controller
 {
@@ -42,6 +43,7 @@ class ImageController extends Controller
                 $mass = (array)$obj;
 
                 if (!$mass) {
+
                     $fileName = $f->getClientOriginalName(); //Get Image Name
 
                 } else {
@@ -50,11 +52,20 @@ class ImageController extends Controller
                     $fn = substr($f->getClientOriginalName(), 0, $pos);
                     $fileName = $fn . '_' . mt_rand(0, 100) . '.' . $extension;  //Concatenate both to get FileName (eg: file.jpg)
                 }
+                $size_img = $f->getSize();
+                $image_info = getimagesize($f);
+                $width = $image_info[0];
+                $height = $image_info[1];
                 $img = ImageInt::make($f);
                 $img->save($path . $fileName);
-                Image::create(['title' => $fileName, 'img' => $fileName]);
-
-
+                Image::create([
+                    'title' => $fileName,
+                    'img'   => $fileName,
+                    'width' => $width,
+                    'height'=> $height,
+                    'size'  => $size_img,
+                    'ipAddress'=> $request->ip() || $this->getIp() || '127.0.0.1:8000'
+                ]);
             }
 
             return redirect()->route('images');
@@ -86,12 +97,13 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $image
+     * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($image)
+    public function show($id)
     {
-        $img = DB::table('images')->where('id', $image)->first();
+//        $prp = new Image();
+        $img = Image::find($id);
         return view('images.image', ['image'=>$img]);
     }
 
@@ -99,23 +111,39 @@ class ImageController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        //
+      //
     }
 
     /**
-     * Update the specified resource in storage.
+    * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+     * @param  \Illuminate\Http\Request  $image
+     * @return \Illuminate\Http\RedirectResponse
+   */
+    public function updateImage(Request $image)
     {
-        //
+        $id = $image->get('id');
+        $name = $image->get('name');
+        $width = intval($image->input('width'));
+        $height = intval($image->input('height'));
+        $x = intval($image->input('x'));
+        $y = intval($image->input('y'));
+        $path = public_path() . '\upload\\';
+
+        $model = new Image();
+        $model->resizeImage($id, $width, $height);
+
+
+        ImageInt::make($path . $name)
+//            ->resize($width,$height)
+                ->crop($width,$height, $x, $y)
+            ->save($path . $name);
+
+        return redirect()->back();
     }
 
     /**
@@ -129,5 +157,37 @@ class ImageController extends Controller
        app(File::class)->delete((public_path('upload/'.$img->name)));//удаление из папки
        Image::destroy($img->id); //удаление из базы
        return redirect()->back();
+    }
+    public function getIp(){
+        if (isset($_SERVER)){
+            if (isset($_SERVER["HTTP_X_FORWARDED_FOR"]))
+            {
+                $ip_addr = $_SERVER["HTTP_X_FORWARDED_FOR"];
+            }
+            elseif (isset($_SERVER["HTTP_CLIENT_IP"]))
+            {
+                $ip_addr = $_SERVER["HTTP_CLIENT_IP"];
+            }
+            else
+            {
+                $ip_addr = $_SERVER["REMOTE_ADDR"];
+            }
+        }
+        else
+        {
+            if ( getenv( 'HTTP_X_FORWARDED_FOR' ) )
+            {
+                $ip_addr = getenv( 'HTTP_X_FORWARDED_FOR' );
+            }
+            elseif ( getenv( 'HTTP_CLIENT_IP' ) )
+            {
+                $ip_addr = getenv( 'HTTP_CLIENT_IP' );
+            }
+            else
+            {
+                $ip_addr = getenv( 'REMOTE_ADDR' );
+            }
+        }
+        return $ip_addr;
     }
 }

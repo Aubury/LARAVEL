@@ -79,7 +79,7 @@
                             </form>
                         </td>
                         <td class="iconsEd">
-                            <a href="{{route('image',$image)}}">
+                            <a href="{{route('image', $image->id)}}">
                                 <i class="material-icons">edit</i>
                              </a>
                          </td>
