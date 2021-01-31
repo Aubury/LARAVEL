@@ -12,7 +12,7 @@ try {
     window.Vue = require('vue');
     window.Cropper = require('cropperjs');
     window.VueRouter = require('vue-router');
-
+    window.Ckeditor = require('@ckeditor/ckeditor5-build-classic');
     require('bootstrap');
 } catch (e) {}
 
@@ -42,7 +42,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
 
 
 

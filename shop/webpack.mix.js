@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,6 +15,8 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js','public/js').extract(['vue'])
     .js('node_modules/popper.js/dist/popper.js','public/js').sourceMaps()
     .js( 'node_modules/cropperjs/dist/cropper.js','public/js').sourceMaps()
+    .js('node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js', 'public/js').sourceMaps()
+    .js('node_modules/tinymce/tinymce.js','public/js').sourceMaps()
     // .js('node_modules/vue/dist/vue.js','public/js').sourceMaps()
 
     .scripts([
@@ -23,6 +26,7 @@ mix.js('resources/js/app.js','public/js').extract(['vue'])
 
     .scripts([
         'resources/js/admin.js',
+        'resources/js/products.js'
     ], 'public/js/admin.js')
     .scripts([
         'resources/js/image.js',

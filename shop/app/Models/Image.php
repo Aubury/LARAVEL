@@ -22,12 +22,13 @@ class Image extends Model
         return DB::table($this->table)->where('id', $id)->first();
 
     }
-    public function resizeImage($id, $width, $height){
+    public function resizeImage($id, $width, $height, $size){
         DB::table('images')
             ->where('id', $id)
             ->update([
                 'width' => $width,
                 'height' => $height,
+                'size' => $size,
                 'updated_at' => now(),
             ]);
     }

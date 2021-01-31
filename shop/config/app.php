@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -234,5 +234,8 @@ return [
         'UploadImage' => Dan\UploadImage\UploadImageFacade::class,
 
     ],
+
+    'log' => 'daily',
+    'log_max_files' => 30,
 
 ];

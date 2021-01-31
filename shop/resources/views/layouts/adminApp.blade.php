@@ -19,7 +19,7 @@
     @yield('style')
 
     <!-- Scripts -->
-{{--    <script src="https://unpkg.com/vue"></script>--}}
+    <script src="https://cdn.tiny.cloud/1/45q0o2oub796vpxe4reygthebztziv75t3ggikp8evbhrzvk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 </head>
 <body>

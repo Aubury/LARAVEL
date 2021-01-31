@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -148,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -156,10 +157,23 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\LARAVEL\shop\database\migrations" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\LARAVEL\shop\resources\views\products" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.development">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="development" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -186,6 +200,7 @@
       <list>
         <item itemvalue="npm.development" />
         <item itemvalue="npm.watch" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +239,36 @@
       <workItem from="1607242019522" duration="5104000" />
       <workItem from="1607248081260" duration="15124000" />
       <workItem from="1607346013046" duration="12073000" />
-      <workItem from="1607417567705" duration="8424000" />
+      <workItem from="1607417567705" duration="18328000" />
+      <workItem from="1607503751231" duration="13444000" />
+      <workItem from="1607602585164" duration="3300000" />
+      <workItem from="1607688868837" duration="58000" />
+      <workItem from="1607688949747" duration="5465000" />
+      <workItem from="1608395588868" duration="1447000" />
+      <workItem from="1608454403996" duration="10957000" />
+      <workItem from="1608472077144" duration="4495000" />
+      <workItem from="1608554765935" duration="19941000" />
+      <workItem from="1608654910836" duration="7719000" />
+      <workItem from="1609690391289" duration="15329000" />
+      <workItem from="1609763386987" duration="24193000" />
+      <workItem from="1609963318068" duration="248000" />
+      <workItem from="1610040352030" duration="7381000" />
+      <workItem from="1610102855439" duration="26860000" />
+      <workItem from="1610189051525" duration="18278000" />
+      <workItem from="1610289942308" duration="10256000" />
+      <workItem from="1610363576394" duration="26979000" />
+      <workItem from="1610530561589" duration="4401000" />
+      <workItem from="1610629592025" duration="15724000" />
+      <workItem from="1610737989563" duration="7912000" />
+      <workItem from="1610794239280" duration="1387000" />
+      <workItem from="1610892060897" duration="18982000" />
+      <workItem from="1610989044252" duration="3677000" />
+      <workItem from="1611045804406" duration="40246000" />
+      <workItem from="1611232678682" duration="10972000" />
+      <workItem from="1611322148480" duration="19414000" />
+      <workItem from="1611423350616" duration="4839000" />
+      <workItem from="1611497555274" duration="10480000" />
+      <workItem from="1611580523284" duration="17106000" />
     </task>
     <servers />
   </component>
@@ -232,50 +276,71 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="329" y="0" width="1016" height="902" key="#Intentions" timestamp="1609767510383">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="0" width="1016" height="902" key="#Intentions/0.0.1676.902@0.0.1676.902" timestamp="1609767510383" />
+    <state x="329" y="26" key="#Notifications" timestamp="1611325532289">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="26" key="#Notifications/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611325532289" />
     <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606402668378">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1676.902@0.0.1676.902" timestamp="1606402668378" />
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607084776116">
+    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608395922397">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1676.902@0.0.1676.902" timestamp="1608395922397" />
+    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608561908746">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607084776116" />
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902@0.0.1676.902" timestamp="1606246256716" />
+    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902@0.0.1676.902" timestamp="1608561908746" />
     <state x="422" y="179" key="EditFileWatcherDialog" timestamp="1605869194852">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="422" y="179" key="EditFileWatcherDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1605869194852" />
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1607025134976">
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1611522370566">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607003468247" />
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1607025134976" />
-    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1607025134976">
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611353129393" />
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1611522370566" />
+    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1611522370566">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607003468246" />
-    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1607025134976" />
-    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1607025134976">
+    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611353129393" />
+    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1611522370566" />
+    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1611522370566">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607003468246" />
-    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1607025134976" />
-    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1607025134976">
+    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611353129393" />
+    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1611522370566" />
+    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1611522370566">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607003468246" />
-    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1607025134976" />
-    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1607365167115">
+    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611353129393" />
+    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1611522370566" />
+    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1609692216276">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1607365167115" />
+    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1609692216276" />
     <state x="230" y="8" key="SettingsEditor" timestamp="1606238154322">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="230" y="8" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1606238154322" />
-    <state x="410" y="202" width="840" height="1034" key="run.anything.popup" timestamp="1606232440757">
+    <state x="410" y="202" width="840" height="1034" key="run.anything.popup" timestamp="1610206999952">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902@0.0.1676.902" timestamp="1606232440757" />
+    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1610130923176" />
+    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902@0.0.1676.902" timestamp="1610206999952" />
+    <state x="329" y="26" key="scopes" timestamp="1608662322671">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="26" key="scopes/0.0.1676.902@0.0.1676.902" timestamp="1608662322671" />
+    <state x="416" y="0" width="840" height="900" key="search.everywhere.popup" timestamp="1610130386069">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="416" y="0" width="840" height="900" key="search.everywhere.popup/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1610130386069" />
   </component>
 </project>

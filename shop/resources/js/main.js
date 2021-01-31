@@ -103,3 +103,24 @@ function createTable(arr, _table, table_str){
 //     }
 // }
 //----------------------------------------------------------------------------------------------------
+
+function change_lable_text(el) {
+    console.log(el.value);
+    let title = el.parentNode.querySelector('.title'),
+        fileName = '';
+
+    if( el.files && el.files.length > 1 ) {
+        fileName = (title.getAttribute('data-multiple-caption') || '').replace('{count}', el.files.length);
+    }else{
+        fileName = el.value.split( '\\' ).pop();
+    }
+    if( fileName ) {
+        title.innerHTML = fileName;
+    }
+}
+function input_focus(input) {
+    input.classList.add( 'has-focus' );
+}
+function input_blur(input) {
+   input.classList.remove( 'has-focus' );
+}

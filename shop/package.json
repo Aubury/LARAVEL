@@ -24,8 +24,11 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^24.0.0",
+        "@codinglabs/laravel-asset": "^1.0.1",
         "cropper": "^4.1.0",
         "cropperjs": "^1.5.9",
+        "tinymce": "^5.6.2",
         "vue-moments-ago": "^0.2.0",
         "vue-router": "^3.4.9"
     }

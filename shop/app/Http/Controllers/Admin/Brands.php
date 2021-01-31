@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use App\Models\Admin\Caterories;
+use App\Models\Admin\Categories;
 use App\Models\Admin\Brands as Brand;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;

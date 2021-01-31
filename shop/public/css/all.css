@@ -285,3 +285,7 @@ iframe{
 .no_margin_top{
     margin-top: 0 !important;
 }
+.min_photo{
+    height: 50px;
+    width: auto;
+}

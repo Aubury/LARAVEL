@@ -10,7 +10,7 @@ use Intervention\Image\Facades\Image as ImageInt;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Filesystem\Filesystem as File;
-use function Ramsey\Uuid\v1;
+
 
 class ImageController extends Controller
 {
@@ -64,7 +64,7 @@ class ImageController extends Controller
                     'width' => $width,
                     'height'=> $height,
                     'size'  => $size_img,
-                    'ipAddress'=> $request->ip() || $this->getIp() || '127.0.0.1:8000'
+                    'ipAddress'=> $this->getIp()
                 ]);
             }
 
@@ -134,14 +134,15 @@ class ImageController extends Controller
         $y = intval($image->input('y'));
         $path = public_path() . '\upload\\';
 
-        $model = new Image();
-        $model->resizeImage($id, $width, $height);
 
-
-        ImageInt::make($path . $name)
-//            ->resize($width,$height)
+       $img = ImageInt::make($path . $name)
                 ->crop($width,$height, $x, $y)
-            ->save($path . $name);
+                ->save($path . $name);
+        $size_img = $img->filesize();
+
+        $model = new Image();
+        $model->resizeImage($id, $width, $height, $size_img);
+
 
         return redirect()->back();
     }
@@ -159,35 +160,52 @@ class ImageController extends Controller
        return redirect()->back();
     }
     public function getIp(){
-        if (isset($_SERVER)){
-            if (isset($_SERVER["HTTP_X_FORWARDED_FOR"]))
-            {
-                $ip_addr = $_SERVER["HTTP_X_FORWARDED_FOR"];
+            foreach (array('HTTP_CLIENT_IP',
+                         'HTTP_X_FORWARDED_FOR',
+                         'HTTP_X_FORWARDED',
+                         'HTTP_X_CLUSTER_CLIENT_IP',
+                         'HTTP_FORWARDED_FOR',
+                         'HTTP_FORWARDED',
+                         'REMOTE_ADDR') as $key){
+                if (array_key_exists($key, $_SERVER) === true){
+                    foreach (explode(',', $_SERVER[$key]) as $ip){
+                        $ip = trim($ip); // just to be safe
+                        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                            return $ip;
+                        }
+                    }
+                }
             }
-            elseif (isset($_SERVER["HTTP_CLIENT_IP"]))
-            {
-                $ip_addr = $_SERVER["HTTP_CLIENT_IP"];
-            }
-            else
-            {
-                $ip_addr = $_SERVER["REMOTE_ADDR"];
-            }
-        }
-        else
-        {
-            if ( getenv( 'HTTP_X_FORWARDED_FOR' ) )
-            {
-                $ip_addr = getenv( 'HTTP_X_FORWARDED_FOR' );
-            }
-            elseif ( getenv( 'HTTP_CLIENT_IP' ) )
-            {
-                $ip_addr = getenv( 'HTTP_CLIENT_IP' );
-            }
-            else
-            {
-                $ip_addr = getenv( 'REMOTE_ADDR' );
-            }
-        }
-        return $ip_addr;
+
+//        if (isset($_SERVER)){
+//            if (isset($_SERVER["HTTP_X_FORWARDED_FOR"]))
+//            {
+//                $ip_addr = $_SERVER["HTTP_X_FORWARDED_FOR"];
+//            }
+//            elseif (isset($_SERVER["HTTP_CLIENT_IP"]))
+//            {
+//                $ip_addr = $_SERVER["HTTP_CLIENT_IP"];
+//            }
+//            else
+//            {
+//                $ip_addr = $_SERVER["REMOTE_ADDR"];
+//            }
+//        }
+//        else
+//        {
+//            if ( getenv( 'HTTP_X_FORWARDED_FOR' ) )
+//            {
+//                $ip_addr = getenv( 'HTTP_X_FORWARDED_FOR' );
+//            }
+//            elseif ( getenv( 'HTTP_CLIENT_IP' ) )
+//            {
+//                $ip_addr = getenv( 'HTTP_CLIENT_IP' );
+//            }
+//            else
+//            {
+//                $ip_addr = getenv( 'REMOTE_ADDR' );
+//            }
+//        }
+//        return $ip_addr;
     }
 }

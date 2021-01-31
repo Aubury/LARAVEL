@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use App\Models\Admin\Caterories;
+use App\Models\Admin\Categories as Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,7 +31,7 @@ class Categories extends Controller
             'name' => ['required', 'string', 'min:2', 'max:255', 'unique:categories'],
         ], $this->messages());
 
-        $categories = new Caterories();
+        $categories = new Category();
         $categories->name = $data->input('name');
 
         if ($validator->fails()) {

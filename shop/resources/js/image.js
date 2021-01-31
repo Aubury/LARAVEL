@@ -6,7 +6,11 @@ function getImage(arr) {
     let mass = JSON.parse(arr);
 
     const cropper = new Cropper(image, {
+
         autoCropArea: 1,
+        center: true,
+        cropBoxMovable: false,
+        zoomable: false,
 
         crop(event) {
             console.log('X: ' + event.detail.x);
@@ -20,7 +24,11 @@ function getImage(arr) {
             form_crop.elements.y.value = event.detail.y;
             form_crop.elements.width.value = event.detail.width;
             form_crop.elements.height.value = event.detail.height;
+
         },
+
+
+
     })
 
 

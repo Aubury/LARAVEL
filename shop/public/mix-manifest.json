@@ -1,9 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/ckeditor.js": "/js/ckeditor.js",
     "/js/cropper.js": "/js/cropper.js",
     "/js/manifest.js": "/js/manifest.js",
     "/js/popper.js": "/js/popper.js",
+    "/js/tinymce.js": "/js/tinymce.js",
     "/js/vendor.js": "/js/vendor.js",
     "/js/main_page.js": "/js/main_page.js",
     "/js/admin.js": "/js/admin.js",

@@ -58,7 +58,6 @@
                         <p><input type="submit"  value="Обрезать" class="btn btn-primary form-control"></p>
                     </form>
                 </div>
-
             </div>
         </div>
         <div class="col-9 border-warning">
