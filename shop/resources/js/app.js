@@ -38,6 +38,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 /* Register our new component: */
 Vue.component('add_main_image_form', require('./components/Add_Main_Image.vue').default);
 Vue.component('add_array_images_form',require('./components/Add_Array_Images').default);
+Vue.component('change_main_image_form', require('./components/Change_main_image.vue').default);
+
+
 
 
 /**
@@ -50,13 +53,14 @@ Vue.component('add_array_images_form',require('./components/Add_Array_Images').d
 const app = new Vue({
     el: '#app',
     components:{
-        // add_images_form: Add_Images_Form,
-    },
+        },
     data(){
         return {
             count: 4,
             admins : [],
             token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            short_description: null,
+            full_description: null,
         }
     },
     methods: {
@@ -64,6 +68,10 @@ const app = new Vue({
             this.admins = arr;
             console.log('Vue ---> Admins:' + this.admins);
         },
+        getInputsValue: function (value_1, value_2) {
+            this.short_description = value_1;
+            this.full_description = value_2;
+        }
     }
 
 });
@@ -94,8 +102,14 @@ TinyMCE.init({
         'bold italic backcolor | alignleft aligncenter ' +
         'alignright alignjustify | bullist numlist outdent indent | ' +
         'removeformat | help',
-    content_css: '//www.tiny.cloud/css/codepen.min.css'
-
+    content_css: '//www.tiny.cloud/css/codepen.min.css',
+    setup: function (editor) {
+        editor.on('init', function (e) {
+            if(app.short_description){
+                editor.setContent(app.short_description);
+            }
+        })
+    }
 })
 TinyMCE.init({
     selector: '#full_description',
@@ -109,6 +123,13 @@ TinyMCE.init({
         'bold italic backcolor | alignleft aligncenter ' +
         'alignright alignjustify | bullist numlist outdent indent | ' +
         'removeformat | help',
-    content_css: '//www.tiny.cloud/css/codepen.min.css'
-
+    content_css: '//www.tiny.cloud/css/codepen.min.css',
+    setup: function (editor) {
+     editor.on('init', function (e) {
+         if(app.full_description){
+             editor.setContent(app.full_description);
+         }
+     })
+    }
 })
+

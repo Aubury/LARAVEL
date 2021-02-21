@@ -97,13 +97,57 @@ class Products extends Controller
      */
 
     public function edit($id){
-        $product = new Product();
-        return view('products.edit',
-            ['product' => $product->get_product($id),
-             'categories' => $this->all_categories(),
-              'brands' => $this->all_brands(),]);
+        $model_product = new Product();
+        $product = $model_product->get_product($id);
+
+        return route('edit_page_product',
+            ['product' => $product, 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
     }
 
+    public function change_main_img(Request $request){
+
+        $files = $request->file('files');
+        foreach ($files as $file) {
+            $id = $this->save_img($file);
+            DB::table('products')->where('id', $request->input('product_id'))->update(['main_img' => $id]);
+        }
+      return redirect()->action([Products::class, 'edit'], [$request->input('product_id')]);
+    }
+    public function save_img($file){
+
+        $path = public_path() . '\upload\\';
+        $obj = DB::table('images')->where('img', $file->getClientOriginalName())->first();
+        $mass = (array)$obj;
+
+        if (!$mass) {
+            $fileName = $file->getClientOriginalName(); //Get Image Name
+        } else {
+            $extension = $file->getClientOriginalExtension();  //Get Image Extension
+            $pos = strpos($file->getClientOriginalName(), ".");
+            $fn = substr($file->getClientOriginalName(), 0, $pos);
+            $fileName = $fn . '_' . mt_rand(0, 100) . '.' . $extension;  //Concatenate both to get FileName (eg: file.jpg)
+        }
+        $size_img = $file->getSize();
+        $image_info = getimagesize($file);
+        $width = $image_info[0];
+        $height = $image_info[1];
+        $info = ['name' => $fileName, 'size' => $size_img, 'info' => $image_info, 'width' => $width, 'height' => $height];
+
+        $img = ImageInt::make($file);
+        $img->save($path . $fileName);
+
+        $id = DB::table('images')
+            ->insertGetId(array('title' => $fileName,
+                'img' => $fileName,
+                'width' => $width,
+                'height' => $height,
+                'size' => $size_img,
+                'created_at' => now(),
+                'updated_at' => now()));
+
+        return $id;
+
+    }
     public function edit_product(Request $request){
 
         $main_img = null;
@@ -321,7 +365,7 @@ class Products extends Controller
      * @param string $brand
      */
     public function get_brand($brand){
-
+        //-----------------
     }
     public function all_brands(){
         $brands = new Brand();

@@ -47,28 +47,29 @@
                     <tr><td class="iconsDel">
                             <form method="POST" action="#">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <input type="hidden" name="id" value="{{$product['id']}}">
                                 <button type="submit" class="no-border"><i class="material-icons">delete</i></button>
                             </form>
                         </td>
                         <td class="iconsEd">
-                            <form method="get" action="{{route('edit_page_product', $product->id)}}">
+                            <form method="get" action="{{route('edit_page_product', $product['id'])}}">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <input type="hidden" name="id" value="{{$product['id']}}">
                                 <button type="submit" class="no-border"><i class="material-icons">edit</i></button>
                             </form>
-                        </td><td>{{ $product->id }}</td>
+                        </td><td>{{ $product['id'] }}</td>
                         <td>
-                            @if(!empty($product->main_img))
-                                <img src="{{ asset('upload/'.$product->main_img) }}">
-                                @else <span>No picture</span>
-                                @endif
+                            @if($product['main_img'] != 'No image!')
+                                <img src="{{ asset('upload/'.$product['main_img']) }}">
+                                @else
+                                <span>No picture</span>
+                            @endif
                         </td>
-                        <td>{{$product->category}}</td>
-                        <td>{{$product->brand}}</td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->amount}}</td>
+                        <td>{{$product['category']}}</td>
+                        <td>{{$product['brand']}}</td>
+                        <td>{{$product['name']}}</td>
+                        <td>{{$product['price']}}</td>
+                        <td>{{$product['amount']}}</td>
                     </tr>
                 @endforeach
             </table>

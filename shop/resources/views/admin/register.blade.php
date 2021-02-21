@@ -162,7 +162,7 @@
     <script>
         let admins = '@json($admins[0])';
         getAllMass(admins);
-        app.getAdmins(admins);
+        // app.getAdmins(admins);
     </script>
 
 @endsection

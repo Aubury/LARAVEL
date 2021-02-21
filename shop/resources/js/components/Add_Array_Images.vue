@@ -96,8 +96,9 @@
                                 img.style.height = 'auto';
                                 sibling.appendChild(img);
                             });
-                            array_to_json = JSON.stringify(mass_id);
-                            extra_photos.value = array_to_json;
+                            // array_to_json = JSON.stringify(mass_id);
+                            // extra_photos.value = array_to_json;
+                            extra_photos.value = mass_id;
                             input_value = array_to_json;
                             console.log(extra_photos);
                             console.log(extra_photos.value);

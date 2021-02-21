@@ -54,13 +54,12 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
 
         Route::post('/images/delete' , [App\Http\Controllers\ImageController::class, 'delete'])->name('deleteImage');
         Route::post('/images/updateImage' , [App\Http\Controllers\ImageController::class, 'updateImage'])->name('updateImage');
+
         Route::post('/products/add_product',[App\Http\Controllers\Admin\Products::class, 'addProduct'])->name('add_product');
         Route::post('/products/edit_product',[App\Http\Controllers\Admin\Products::class, 'edit_product'])->name('edit_product');
         Route::post('/products/store_img',[App\Http\Controllers\Admin\Products::class, 'store_img'])->name('store_img');
         Route::put('/products/store_img_with_js',[App\Http\Controllers\Admin\Products::class, 'store_img_with_js'])->name('store_img_with_js');
-
-
-
+        Route::post('/products/change_main_img', [App\Http\Controllers\Admin\Products::class, 'change_main_img'])->name('change_main_img');
 
 
 //Show Pages For Admin
@@ -70,7 +69,7 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
         Route::get('/brands', [App\Http\Controllers\Admin\Brands::class, 'show'])->name('brands');
         Route::get('/products', [App\Http\Controllers\Admin\Products::class, 'show'])->name('products');
         Route::get('/products/create', [App\Http\Controllers\Admin\Products::class, 'create'])->name('createProduct');
-        Route::get('/products/edit/{id}', [App\Http\Controllers\Admin\Products::class, 'edit'])->name('edit_page_product');
+        Route::get('/products/edit/{name}', [App\Http\Controllers\Admin\Products::class, 'edit'])->name('edit_page_product');
         Route::get('/images', [App\Http\Controllers\ImageController::class, 'index'])->name('images');
         Route::get('/images/image/{title}', [App\Http\Controllers\ImageController::class, 'show'])->name('image');
 

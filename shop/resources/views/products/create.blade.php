@@ -69,10 +69,10 @@
                 </p>
                 <p class="w_100 pb-3">
                     <label for="category">Категория товара</label>
-                    <select  name="category" id="category" class="_form-control no_margin_top @error('category') is-invalid @enderror" value="{!! old('category') !!}">
+                    <select  name="category" id="category" class="_form-control no_margin_top @error('category') is-invalid @enderror">
                         <option value="" hidden>Выберите категорию</option>
                         @foreach($categories as $category)
-                            <option value="{{$category->name}}">{{$category->name}}</option>
+                            <option value="{{$category->name}}" @if($category->name === old('category')) selected @endif>{{$category->name}}</option>
                         @endforeach
                     </select>
                     @error('category')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
@@ -80,33 +80,33 @@
                 </p>
                 <p class="w_100 pb-3">
                     <label for="brand">Бренд товара</label>
-                    <select  name="brand" id="brand" class="_form-control no_margin_top @error('brand') is-invalid @enderror" value="{!! old('brand') !!}">
+                    <select  name="brand" id="brand" class="_form-control no_margin_top @error('brand') is-invalid @enderror">
                         <option value="" hidden>Выберите бренд</option>
                         @foreach($brands as $brand)
-                            <option value="{{$brand->name}}">{{$brand->name}}</option>
+                            <option value="{{$brand->name}}" @if($brand->name === old('brand')) selected @endif>{{$brand->name}}</option>
                         @endforeach
                     </select>
                     @error('category')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </p>
                 <p class="w_100 pb-3">
                     <label for="price">Цена товара</label>
-                    <input type="number" step="0.01" min="0.00" name="price" id="price" class="_form-control no_margin_top">
+                    <input type="number" step="0.01" min="0.00" name="price" id="price" class="_form-control no_margin_top" value="{!! old('price') !!}">
                 </p>
                 <p class="w_100 pb-3">
                     <label for="amount">Количество товара</label>
-                    <input type="number" name="amount" id="amount" class="_form-control no_margin_top">
+                    <input type="number" name="amount" id="amount" class="_form-control no_margin_top" value="{!! old('amount') !!}">
                 </p>
                 <p class="w_100 pb-3">
                     <label for="short_description">Короткое описание</label>
-                    <textarea id="short_description" name="short_description" class="_form-control no_margin_top"></textarea>
+                    <textarea id="short_description" name="short_description" class="_form-control no_margin_top" value="{!! old('short_description') !!}"></textarea>
                 </p>
                 <p class="w_100 pb-3">
                     <label for="full_description">Полное описание</label>
-                    <textarea id="full_description" name="full_description" class="_form-control no_margin_top"></textarea>
+                    <textarea id="full_description" name="full_description" class="_form-control no_margin_top" value="{!! old('full_description') !!}"></textarea>
                 </p>
                 <p class="w_100">
-                   <input type="text" name="main_img" id="main_img" class="w-100" placeholder="Главное фото" readonly >
-                   <input type="text" name="mass_img" id="mass_img" class="w_100" placeholder="Дополнительные фото" readonly >
+                   <input type="text" name="main_img" id="main_img" class="w-100" placeholder="Главное фото"  value="{!! old('main_img') !!}">
+                   <input type="text" name="mass_img" id="mass_img" class="w_100" placeholder="Дополнительные фото"  value="{!! old('mass_img') !!}">
                </p>
                 <p class="w_100">
                     <button class="btn btn-block btn-success w_100" type="submit">Создать</button>
@@ -117,19 +117,18 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/ckeditor.js')}}"></script>
-{{--    <script>--}}
-{{--        ClassicEditor--}}
-{{--            .create( document.querySelector( '#short_description' ) )--}}
-{{--            // .create( document.querySelector( '#full_description' ) )--}}
-{{--            .catch( error => {--}}
-{{--                console.error( error );--}}
-{{--            } );--}}
-{{--    </script>--}}
-{{--    <script type="text/javascript">--}}
-
-
-{{--    </script>--}}
+    <script>
+        let short_description = '@json(old('short_description'))',
+            full_description = '@json(old('full_description'))';
+        console.log(short_description.slice(1,-1));
+        console.log(full_description.slice(1,-1));
+        if(short_description !== 'null'){
+            window.app.__vue__.short_description = short_description.slice(1,-1);
+        }
+        if(full_description !== 'null'){
+            window.app.__vue__.full_description = full_description.slice(1,-1);
+        }
+    </script>
 @endsection
 
 
