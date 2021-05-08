@@ -48,10 +48,10 @@
                     <div class="card-body">
                         <!--Our component:-->
                         <change_main_image_form product = '@json($product)'></change_main_image_form>
-                        <input type="text" name="id_main_img" id="id_main_img" value="{{$product[0]['main_img'] != 'No image!' ? $product[0]['id_main_img'] : 'No image!'}}" class="_form-control no_margin_top">
+                        <input type="text" name="id_main_img" id="id_main_img" value="{{$product['main_img'] != 'No image!' ? $product['id_main_img'] : 'No image!'}}" class="_form-control no_margin_top">
                         <div class="f-row justify-center align-center mt-3">
-                            @if($product[0]['main_img'] != 'No image!')
-                                <img src="{{ asset('upload/'.$product[0]['main_img']) }}" class="min_photo">
+                            @if($product['main_img'] != 'No image!')
+                                <img src="{{ asset('upload/'.$product['main_img']) }}" class="min_photo">
                             @else
                                 <span>No picture</span>
                             @endif
@@ -73,12 +73,12 @@
                     @csrf
                     <p class="w_100 pb-3 ">
                         <label for="name">ID товара</label>
-                        <input type="text" name="name" id="name" class="_form-control no_margin_top @error('name') is-invalid @enderror" value="{{isset($product[0]['id']) ? $product[0]['id'] : old('name')}}" readonly>
+                        <input type="text" name="name" id="name" class="_form-control no_margin_top @error('name') is-invalid @enderror" value="{{isset($product['id']) ? $product['id'] : old('name')}}" readonly>
                         @error('id')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                     </p>
                     <p class="w_100 pb-3 ">
                         <label for="name">Назание товара</label>
-                        <input type="text" name="name" id="name" class="_form-control no_margin_top @error('name') is-invalid @enderror" value="{{isset($product[0]['name']) ? $product[0]['name'] : old('name')}}">
+                        <input type="text" name="name" id="name" class="_form-control no_margin_top @error('name') is-invalid @enderror" value="{{isset($product['name']) ? $product['name'] : old('name')}}">
                         @error('name')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                     </p>
                     <p class="w_100 pb-3">
@@ -116,8 +116,8 @@
                         <textarea id="full_description" name="full_description" class="_form-control no_margin_top"></textarea>
                     </p>
                     <p class="w_100">
-                        <input type="text" name="main_img" id="main_img" class="w-100" placeholder="Главное фото"  value="{{isset($product[0]['id_main_img']) ? $product[0]['id_main_img'] : old('main_img')}}">
-                        <input type="text" name="mass_img" id="mass_img" class="w_100" placeholder="Дополнительные фото"  value="{{isset($product[0]['id_mass_img']) ? $product[0]['id_mass_img'] : old('mass_img')}}">
+                        <input type="text" name="main_img" id="main_img" class="w-100" placeholder="Главное фото"  value="{{isset($product['id_main_img']) ? $product['id_main_img'] : old('main_img')}}">
+                        <input type="text" name="mass_img" id="mass_img" class="w_100" placeholder="Дополнительные фото"  value="{{isset($product['id_mass_img']) ? $product['id_mass_img'] : old('mass_img')}}">
                     </p>
                     <p class="w_100">
                         <button class="btn btn-block btn-success w_100" type="submit">Создать</button>
@@ -211,10 +211,10 @@
 
 @section('scripts')
     <script>
-        let short_description = '@json($product[0]['short_description'])',
-            full_description = '@json($product[0]['full_description'])',
-            main_img = '@json($product[0]['main_img'])',
-            mass_img = '@json($product[0]['mass_img'])';
+        let short_description = '@json($product['short_description'])',
+            full_description = '@json($product['full_description'])',
+            main_img = '@json($product['main_img'])',
+            mass_img = '@json($product['mass_img'])';
         // console.log(short_description.slice(1,-1));
         // console.log(full_description.slice(1,-1));
         // console.log(main_img);

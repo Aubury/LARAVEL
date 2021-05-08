@@ -151,7 +151,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -186,6 +186,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -200,12 +210,13 @@
       <list>
         <item itemvalue="npm.watch" />
         <item itemvalue="npm.development" />
+        <item itemvalue="npm.prod" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\aubur\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -279,6 +290,10 @@
       <workItem from="1613053583084" duration="17595000" />
       <workItem from="1613226884133" duration="11949000" />
       <workItem from="1613313515621" duration="3005000" />
+      <workItem from="1617904354501" duration="132000" />
+      <workItem from="1617904497238" duration="5595000" />
+      <workItem from="1618915657814" duration="12193000" />
+      <workItem from="1619030380098" duration="1975000" />
     </task>
     <servers />
   </component>
@@ -286,71 +301,37 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="329" y="0" width="1016" height="902" key="#Intentions" timestamp="1609767510383">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="329" y="0" width="1016" height="902" key="#Intentions/0.0.1676.902@0.0.1676.902" timestamp="1609767510383" />
     <state x="329" y="26" key="#Notifications" timestamp="1611325532289">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="329" y="26" key="#Notifications/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1611325532289" />
-    <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606402668378">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="583" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1676.902@0.0.1676.902" timestamp="1606402668378" />
-    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608395922397">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="535" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1676.902@0.0.1676.902" timestamp="1608395922397" />
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608561908746">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1607084776116" />
-    <state x="505" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1676.902@0.0.1676.902" timestamp="1608561908746" />
-    <state x="422" y="179" key="EditFileWatcherDialog" timestamp="1605869194852">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="422" y="179" key="EditFileWatcherDialog/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1605869194852" />
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1613510341193">
+    <state width="1624" height="223" key="GridCell.Tab.0.bottom" timestamp="1617912051151">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1612471098189" />
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1613510341193" />
-    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1613510341193">
+    <state width="1624" height="223" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1617912051151" />
+    <state width="1624" height="223" key="GridCell.Tab.0.center" timestamp="1617912051151">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1612471098189" />
-    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1613510341193" />
-    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1613510341193">
+    <state width="1624" height="223" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1617912051151" />
+    <state width="1624" height="223" key="GridCell.Tab.0.left" timestamp="1617912051151">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1612471098188" />
-    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1613510341193" />
-    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1613510341193">
+    <state width="1624" height="223" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1617912051151" />
+    <state width="1624" height="223" key="GridCell.Tab.0.right" timestamp="1617912051151">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1612471098189" />
-    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1613510341193" />
-    <state x="650" y="359" key="NewPhpFileDialog" timestamp="1609692216276">
+    <state width="1624" height="223" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1617912051151" />
+    <state x="233" y="9" key="SettingsEditor" timestamp="1618932599651">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="650" y="359" key="NewPhpFileDialog/0.0.1676.902@0.0.1676.902" timestamp="1609692216276" />
-    <state x="230" y="8" key="SettingsEditor" timestamp="1606238154322">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="230" y="8" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1606238154322" />
-    <state x="410" y="202" width="840" height="1034" key="run.anything.popup" timestamp="1610206999952">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1610130923176" />
-    <state x="410" y="202" width="840" height="1034" key="run.anything.popup/0.0.1676.902@0.0.1676.902" timestamp="1610206999952" />
+    <state x="233" y="9" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1618932599651" />
     <state x="329" y="26" key="scopes" timestamp="1612380747223">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="329" y="26" key="scopes/0.0.1676.902@0.0.1676.902" timestamp="1612380747223" />
-    <state x="416" y="0" width="840" height="900" key="search.everywhere.popup" timestamp="1610130386069">
-      <screen x="0" y="0" width="1676" height="902" />
-    </state>
-    <state x="416" y="0" width="840" height="900" key="search.everywhere.popup/0.0.1676.902/1920.0.1676.902@0.0.1676.902" timestamp="1610130386069" />
   </component>
 </project>

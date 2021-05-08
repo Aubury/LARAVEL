@@ -93,25 +93,31 @@ class Products extends Controller
 
     /**
      * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return string
      */
 
     public function edit($id){
         $model_product = new Product();
         $product = $model_product->get_product($id);
-
-        return route('edit_page_product',
-            ['product' => $product, 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
+     return  view('products.edit', ['product' => $product[0], 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
+     //        return route('edit_page_product', ['product' => $product[0], 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
     }
-
+   public function  edit_page($id){
+       $model_product = new Product();
+       $product = $model_product->get_product($id);
+       return  view('products.edit', ['product' => $product[0], 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
+//       return route('edit_page_product', ['product' => $product[0], 'categories' => $this->all_categories(), 'brands' => $this->all_brands()]);
+   }
     public function change_main_img(Request $request){
 
         $files = $request->file('files');
         foreach ($files as $file) {
-            $id = $this->save_img($file);
-            DB::table('products')->where('id', $request->input('product_id'))->update(['main_img' => $id]);
+            $arr= $this->save_img($file);
+
+//            DB::table('products')->where('id', $request->input('product_id'))->update(['main_img' => $id]);
+            return $arr;
         }
-      return redirect()->action([Products::class, 'edit'], [$request->input('product_id')]);
+      return redirect()->action([Products::class, 'edit_page'], [$request->input('product_id')]);
     }
     public function save_img($file){
 
@@ -145,7 +151,13 @@ class Products extends Controller
                 'created_at' => now(),
                 'updated_at' => now()));
 
-        return $id;
+
+        array_push($mass_img,
+            array('id' => $id,
+                'name' => $this->get_img_name($id),
+                'url' => asset('upload/'.$fileName)));
+
+        return $mass_img;
 
     }
     public function edit_product(Request $request){
@@ -233,7 +245,6 @@ class Products extends Controller
             return redirect()->back()->withErrors('No file');
         }
     }
-
     public function store_img_with_js(Request $request)
     {
         $files = $request->file('files');

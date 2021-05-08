@@ -104,6 +104,10 @@ class Products extends Model
         $value = DB::table($this->table)->where('id' , $id)->first();
         $product = [];
 
+        $log = new Logger('Product');
+        $log->pushHandler(new StreamHandler('my_storage/product.log', Logger::WARNING));
+        $log->warning(json_encode( $value));
+
         $mass_img_name = [];
 
         if($value->mass_img){

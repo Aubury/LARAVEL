@@ -52,7 +52,7 @@
                             </form>
                         </td>
                         <td class="iconsEd">
-                            <form method="get" action="{{route('edit_page_product', $product['id'])}}">
+                            <form method="get" action="{{route('get_product_for_edit', $product['id'])}}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$product['id']}}">
                                 <button type="submit" class="no-border"><i class="material-icons">edit</i></button>

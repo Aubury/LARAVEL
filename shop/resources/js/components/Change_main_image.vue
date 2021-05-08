@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div v-if="errors && errors.name" class="text-danger">{{ errors.name[0] }}</div>
-            <button type="submit" class="btn btn-success">Добавить</button>
+            <button type="submit" class="btn btn-success">Изменить</button>
         </form>
         <div v-if="error"  class="alert alert-danger mt-3">
             {{ warning }}

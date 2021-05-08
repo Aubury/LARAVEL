@@ -1,0 +1,7 @@
+*****admin*****
+login : aubury@ukr.net
+pass  : oc_shop_Aubury
+
+****user******
+login : ivanov@ukr.net
+pass  : ivanov99

@@ -57,6 +57,7 @@ Route::post('/admin-log', [App\Http\Controllers\AuthAdmin\LoginController::class
 
         Route::post('/products/add_product',[App\Http\Controllers\Admin\Products::class, 'addProduct'])->name('add_product');
         Route::post('/products/edit_product',[App\Http\Controllers\Admin\Products::class, 'edit_product'])->name('edit_product');
+        Route::post('/products/edit/{id}',[App\Http\Controllers\Admin\Products::class, 'edit'])->name('get_product_for_edit');
         Route::post('/products/store_img',[App\Http\Controllers\Admin\Products::class, 'store_img'])->name('store_img');
         Route::put('/products/store_img_with_js',[App\Http\Controllers\Admin\Products::class, 'store_img_with_js'])->name('store_img_with_js');
         Route::post('/products/change_main_img', [App\Http\Controllers\Admin\Products::class, 'change_main_img'])->name('change_main_img');
@@ -87,4 +88,12 @@ Route::get('/test', function (){
 });
 Route::get('/info', function (){
     return view('images.info');
+});
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:cache');
+
+    return "Кэш очищен.";
 });
